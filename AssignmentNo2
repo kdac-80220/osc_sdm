@@ -1,0 +1,164 @@
+1. List the directory contents date wise sorted. ( man ls)
+Ans: ls -c
+demo1.txt  ABC  LMN  PQR  XYZ  info.txt  demo2.txt  demo3.txt
+
+
+2. List the directory contents size wise sorted.(man ls)
+Ans: ls -S
+ABC  info.txt  demo1.txt  demo2.txt  demo3.txt  LMN  PQR  XYZ
+
+3. List directory contents along with their inode no. (man ls)
+Ans:  ls -i
+5408536 ABC  5408494 demo1.txt  5408537 demo2.txt  5408538 demo3.txt  5408492 info.txt  5408507 LMN  5408505 PQR  5408506 XYZ
+
+4. List the contents of the subdirectory.
+Ans: ls -R
+.:
+ABC  demo1.txt  demo2.txt  demo3.txt  info.txt  LMN  PQR  XYZ
+
+./ABC:
+new.txt
+
+5. Create a file, write your surname and name in it and save.
+Ans: cat > myInformation.txt
+Patil Shivshankar
+
+i. now open the same file and add your address in it and save.
+Ans:  cat >> myInformation.txt
+At post Washi
+
+ii. reopen the same file and check your name and address in it.
+Ans: cat myInformation.txt
+Patil Shivshankar
+At post Washi
+
+
+6. how to change the time stamp of file (man touch)
+Ans: touch -t 200006291840 demo3.txt
+sunbeam@sunbeam-shiv:~/OSC$ ls -lt
+total 16
+-rw-rw-r-- 1 sunbeam sunbeam   32 Dec  6 18:45 myInformation.txt
+-rw-rw-r-- 1 sunbeam sunbeam    5 Dec  6 18:21 demo1.txt
+drwxrwxr-x 2 sunbeam sunbeam 4096 Dec  6 18:06 ABC
+-rw-rw-r-- 1 sunbeam sunbeam    0 Dec  6 18:06 LMN
+-rw-rw-r-- 1 sunbeam sunbeam    0 Dec  6 18:06 PQR
+-rw-rw-r-- 1 sunbeam sunbeam    0 Dec  6 18:06 XYZ
+-rw-rw-r-- 1 sunbeam sunbeam   16 Dec  6 17:36 info.txt
+-rw-rw-r-- 1 sunbeam sunbeam    0 Dec  6 17:27 demo2.txt
+-rw-rw-r-- 1 sunbeam sunbeam    0 Jun 29  2000 demo3.txt
+
+
+7. Create directory structure : Give following commands ,
+-> mkdir one
+-> cd one
+-> touch 1.txt 11.txt 111.txt
+-> mkdir two
+-> cd two
+-> touch 2.txt 22.txt 222.txt
+-> mkdir three
+-> cd three
+-> touch 3.txt 33.txt 333.txt
+-> mkdir four
+-> cd four
+-> touch 4.txt 44.txt 444.txt
+-> mkdir five
+-> cd five
+-> touch 5.txt 55.txt 555.txt
+-> cd ~ (i.e. go to your home directory)
+
+Ans:
+cd one
+sunbeam@sunbeam-shiv:~/OSC/one$ ls -R
+.:
+111.txt  11.txt  1.txt  two
+
+./two:
+222.txt  22.txt  2.txt  three
+
+./two/three:
+333.txt  33.txt  3.txt  four
+
+./two/three/four:
+444.txt  44.txt  4.txt  five
+
+./two/three/four/five:
+555.txt  55.txt  5.txt
+
+
+
+8. Considering above directory structure , Do following operations :
+
+i. list the directory contents of directory named "five" from current directory (i.e. home directory).
+Ans:  ls OSC/one/two/three/four/five
+555.txt  55.txt  5.txt
+
+
+ii. write your name in a file named "44.txt" of directory "four" from current directory.
+Ans:
+cat >> OSC/one/two/three/four/44.txt
+Shivshankar Patil
+cat OSC/one/two/three/four/44.txt
+Shivshankar Patil
+
+
+iii. remove the file named "555.txt" from directory "five" from current directory.
+Ans:
+rm OSC/one/two/three/four/five/555.txt
+sunbeam@sunbeam-shiv:~$ ls OSC/one/two/three/four/five
+55.txt  5.txt
+
+iv. change directory to five ( i.e. cd one/two/three/four/five/ ).
+Ans:
+cd OSC/one/two/three/four/five
+sunbeam@sunbeam-shiv:~/OSC/one/two/three/four/five$ 
+
+v. write your course name in file named "3.txt" which resides in directory "three" from current directory (i.e. five).also read the same file.
+Ans:
+cat >> /home/sunbeam/OSC/one/two/three/four/3.txt
+CDAC
+
+vi. list the contents of directory "two" from current directory (i.e. five).
+Ans:
+ls /home/sunbeam/OSC/one/two
+222.txt  22.txt  2.txt  three
+
+vii. remove file named "222.txt" which belongs to directory "two" from current directory (i.e. five)
+Ans:
+rm /home/sunbeam/OSC/one/two/22.txt
+ls /home/sunbeam/OSC/one/two
+222.txt  2.txt  three
+
+
+viii. now change the directory to "one"
+Ans: cd /home/sunbeam/OSC/one
+
+ix. remove all files only from directory named "five" from current directory (i.e. one)
+Ans: 
+rm two/three/four/five/*
+sunbeam@sunbeam-shiv:~/OSC/one$ ls two/three/four/five
+
+x. remove directory named "five" from current directory (i.e. one)
+Ans:
+rm -r two/three/four/five
+
+xi. remove whole directory named "four" from current directory (i.e. one)
+Ans:
+ rm -r two/three/four
+ 
+ 
+ 
+ xii. change to your home directory.
+ Ans: cd ~
+ 
+ 
+ 9. change the time stamp of file named "3.txt" which resides in directory named "three".(man touch)
+ Ans:
+ 
+ ~/OSC/one/two/three$ ls -lt
+total 0
+-rw-rw-r-- 1 sunbeam sunbeam 0 Dec  6 19:02 333.txt
+-rw-rw-r-- 1 sunbeam sunbeam 0 Dec  6 19:02 33.txt
+-rw-rw-r-- 1 sunbeam sunbeam 0 Jun 29  2000 3.txt
+
+ touch -t 200006291530 /home/sunbeam/OSC/one/two/three/3.txt
+
