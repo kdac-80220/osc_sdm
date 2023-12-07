@@ -1,0 +1,77 @@
+1)to display hidden files
+ls -a
+
+2)to change all extention type
+rename -v 's/.txt/.htm/' *.txt
+
+
+3)to create link file
+ln -s demo1.txt textlink.txt
+
+4)to crete hard link
+ln demo2.txt hardlink.txt
+
+
+6)modify time stamp of file 
+touch -t 202006291512 demo3.txt
+
+7)crate file using touch
+touch abc.txt
+
+8)print all lines exclude first 5 lines
+tail -n +6 number.txt
+
+
+11)to see current user
+ whoami
+ 
+12)find current terminal
+tty
+
+15) Find all users logged into the system 
+users
+
+
+16)Find all users logged in and terminals in use
+who
+
+17)Find a given word/pattern from the file
+i) grep "ap" test.txt
+ii) fgrep "name" test.txt
+iii) egrep "nam+e" test.txt
+
+
+18)make the files read only
+chmod 444 demo1.txt	//444
+
+19)Make a file as write, read and execute
+chmod 777 demo1.txt
+
+20)Take input from the file, count words and store output to other file
+wc < number.txt > numbercount.txt
+
+21)Count words in output of “who” command
+who | wc
+
+
+22)Print lines 5 to 10 from the given file
+head  number.txt | tail -n +5
+
+23)Print the uniq values from the unsorted file
+sort -n unsorted.txt | uniq
+
+
+25) 
+ls -S
+
+28)Convert file contents into uppercase , also learn "-s" option of this command
+cat test.txt | tr "a-z" "A-Z"
+
+29)
+
+
+
+
+
+
+
