@@ -1,0 +1,38 @@
+Create a file named "data.txt" and write the following lines in it(write as it is).
+Linux is open source.
+In Linux everything is file
+files have permissions.
+files have inode no.
+files have size.
+there are several types of files
+compose the commands fulfilled following requirement
+
+i) count the no. of words ,characters and lines from above 2 file.(man wc)
+Ans: wc data.txt
+
+ii) list the lines having word "files" (man grep)
+Ans: grep "files" data.txt
+
+iii) list the lines having word "file" (man grep)
+Ans: grep -w "file" data.txt
+
+iv)list the lines which don't have word "files" (man grep)
+Ans:  grep -v "files" data.txt
+
+v)list the lines having word "have" . (man grep)
+Ans:  grep -w "have" data.txt
+
+vi) list the lines starts with letter "f" (man grep)
+Ans:  grep "^f" data.txt
+
+vii) list the lines ends with "." (man grep)
+Ans: grep ".$" data.txt
+
+viii) list only first two lines.(man head)
+Ans: head -n +2 data.txt
+
+ix) list only last three lines.(man tail)
+Ans: tail -n +4 data.txt
+
+x) list line no.3,4 and 5 . (man head and tail)
+Ans:head -n +5 data.txt | tail -n +3
